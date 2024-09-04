@@ -1,5 +1,6 @@
 import "@repo/ui/globals.css";
 import type { Metadata } from "next";
+
 import SessionProvider from "~/providers/SessionProvider";
 import { Toaster } from "@repo/ui/components/ui/sonner";
 

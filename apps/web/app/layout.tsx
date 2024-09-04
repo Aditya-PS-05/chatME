@@ -1,8 +1,7 @@
 import "@repo/ui/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import SessionProvider from "~/providers/SessionProvider";
+import { Toaster } from "@repo/ui/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Docs",
@@ -15,8 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <SessionProvider>
+        <body className={"min-h-screen bg-background font-sans antialiased"}>
+          <main>{children}</main>
+          <Toaster richColors duration={50000} />
+        </body>
+      </SessionProvider>
     </html>
   );
 }

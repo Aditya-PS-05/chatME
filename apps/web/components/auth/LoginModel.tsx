@@ -11,14 +11,14 @@ import Image from "next/image";
 import { signIn } from "next-auth/react";
 import { DialogDescription } from "@radix-ui/react-dialog";
 
-const handleGoogleLogin = async () => {
-  signIn("google", {
-    redirect: true,
-    callbackUrl: "/",
-  });
-};
-
 export default function LoginModal() {
+  const handleGoogleLogin = async () => {
+    await signIn("google", {
+      redirect: true,
+      callbackUrl: "/dashboard",
+    });
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>

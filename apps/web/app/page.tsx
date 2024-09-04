@@ -3,7 +3,7 @@ import Footer from "~/components/Base/Footer";
 import HeroSection from "~/components/Base/HeroSection";
 import Navbar from "~/components/Base/Navbar";
 import UserReviews from "~/components/Base/UserReview";
-import { authOptions, CustomSession } from "./api/auth/[...nextAuth]/options";
+import { authOptions, CustomSession } from "./api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
 
 export default async function Page() {

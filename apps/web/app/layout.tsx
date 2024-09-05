@@ -2,7 +2,8 @@ import "@repo/ui/globals.css";
 import type { Metadata } from "next";
 
 import SessionProvider from "~/providers/SessionProvider";
-import { Toaster } from "@repo/ui/components/ui/sonner";
+// import { Toaster } from "@repo/ui/components/ui/sonner";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Docs",
@@ -19,7 +20,8 @@ export default function RootLayout({
       <SessionProvider>
         <body className={"min-h-screen bg-background font-sans antialiased"}>
           <main>{children}</main>
-          <Toaster richColors duration={50000} />
+          // <Toaster richColors duration={5000} />
+          <Toaster position="bottom-right" />
         </body>
       </SessionProvider>
     </html>

@@ -7,7 +7,8 @@
       }
     ],
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["./*"],
+      "@repo": ["./node_modules/@repo/*"]
     }
   },
   "include": [

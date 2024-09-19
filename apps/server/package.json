@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.19.0",
+    "@socket.io/admin-ui": "^0.5.1",
     "@socket.io/redis-streams-adapter": "^0.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

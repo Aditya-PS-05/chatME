@@ -20,7 +20,7 @@ export default function RootLayout({
       <SessionProvider>
         <body className={"min-h-screen bg-background font-sans antialiased"}>
           <main>{children}</main>
-          // <Toaster richColors duration={5000} />
+          {/* <Toaster richColors duration={5000} />  */}
           <Toaster position="bottom-right" />
         </body>
       </SessionProvider>

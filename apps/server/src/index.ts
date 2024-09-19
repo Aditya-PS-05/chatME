@@ -7,6 +7,7 @@ import { Server } from "socket.io";
 import { setupSocket } from "./socket";
 import { createAdapter } from "@socket.io/redis-streams-adapter";
 import redis from "./config/redis.config";
+import { instrument } from "@socket.io/admin-ui";
 
 const PORT = process.env.PORT || 8080;
 
@@ -15,10 +16,16 @@ app.use(cors());
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: ["http://localhost:3000", "https://admin.socket.io"],
+    credentials: true
   },
   adapter: createAdapter(redis)
 });
+
+instrument(io, {
+  auth: false,
+  mode: "development"
+})
 
 setupSocket(io);
 export { io };

@@ -1,35 +1,33 @@
 "use client";
-import React, { useEffect, useMemo } from "react";
-import { getSocket } from "~/lib/socket.config";
-import { v4 as uuidV4 } from "uuid";
-import { Button } from "@repo/ui/components/ui/button";
+import React, { useEffect, useState } from "react";
+import ChatSidebar from "./ChatSidebar";
+import { GroupChatType, GroupChatUserType, MessageType } from "~/types";
+import ChatNav from "./ChatNav";
+import ChatUserDialog from "./ChatUserDialog";
+import Chats from "./Chats";
 
-export default function ChatBase({groupId}: {groupId: string}) {
-  let socket = useMemo(() => {
-    const socket = getSocket();
-    socket.auth = {
-      room: groupId
-    }
-    return socket.connect();
-  }, []);
+export default function ChatBase({group, users, oldMessages}: {group: GroupChatType, users: Array<GroupChatUserType> | [], oldMessages: Array<MessageType> | []}) {
+
+  const [open, setOpen] = useState(true);
+  const [chatUser, setChatUser] = useState<GroupChatUserType>();
 
   useEffect(() => {
-    socket.on("message", (data: any) => {
-      console.log("The socket message is", data);
-    });
+    const data = localStorage.getItem(group.id);
+    if(data) {
+      const pdata = JSON.parse(data);
+      setChatUser(pdata);
+    }
+  }, [group.id])
 
-    return () => {
-      socket.close();
-    };
-  }, []);
-
-  const handleClick = () => {
-    console.log("Hey I am clicking. " + uuidV4());
-    socket.emit("message", { name: "Aditya", id: uuidV4() });
-  };
   return (
-    <div>
-      <Button onClick={handleClick}>Click Me</Button>
+    <div className="flex">
+      <ChatSidebar users={users}/>
+      <div className="w-full md:w-4/5 bg-gradient-to-b from-gray-50 to-white">
+      {open ? <ChatUserDialog open={open} setOpen={setOpen} group={group} /> : 
+        <ChatNav chatGroup={group} users={users}/>
+      }
+      <Chats group={group} chatUser={chatUser} oldMessages={oldMessages} />
+      </div>
     </div>
   );
 }

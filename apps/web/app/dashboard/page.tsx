@@ -4,14 +4,14 @@ import { authOptions, CustomSession } from "../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
 import CreateChat from "~/components/groupChat/CreateChat";
 import { fetchChatGroups } from "~/fetch/groupFetch";
-import { ChatGroupType } from "~/types";
+import { GroupChatType } from "~/types";
 import GroupChatCard from "~/components/groupChat/GroupChatCard";
 
 export default async function dashboard() {
   const session: CustomSession | null = await getServerSession(authOptions);
   console.log("The session is ", session);
 
-  const groups: Array<ChatGroupType> | [] = await fetchChatGroups(
+  const groups: Array<GroupChatType> | [] = await fetchChatGroups(
     session?.user?.token!,
   );
 

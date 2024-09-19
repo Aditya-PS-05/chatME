@@ -6,13 +6,14 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+} from "@repo/ui/components/ui/dialog";
+import { Input } from "@repo/ui/components/ui/input";
+import { Button } from "@repo/ui/components/ui/button";
 import { useParams } from "next/navigation";
 import axios from "axios";
-import { CHAT_GROUP_USERS } from "@/lib/apiAuthRoutes";
-import { toast } from "sonner";
+import { CHAT_GROUP_USERS } from "../../lib/apiAuthRoutes";
+import { toast } from "react-hot-toast";
+import { GroupChatType } from "~/types";
 
 export default function ChatUserDialog({
   open,

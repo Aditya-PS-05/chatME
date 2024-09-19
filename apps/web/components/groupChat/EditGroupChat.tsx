@@ -20,7 +20,7 @@ import axios, { AxiosError } from "axios";
 import { CHAT_GROUP } from "../../lib/apiAuthRoutes";
 import { toast } from "react-hot-toast";
 import { clearCache } from "../../actions/common";
-import { ChatGroupType } from "~/types";
+import { GroupChatType } from "~/types";
 
 export default function EditGroupChat({
   user,
@@ -29,7 +29,7 @@ export default function EditGroupChat({
   setOpen,
 }: {
   user: CustomUser;
-  group: ChatGroupType;
+  group: GroupChatType;
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }) {

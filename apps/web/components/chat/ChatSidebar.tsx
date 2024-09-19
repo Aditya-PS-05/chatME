@@ -1,4 +1,5 @@
 import React from "react";
+import { GroupChatUserType } from "~/types";
 
 export default function ChatSidebar({
   users,

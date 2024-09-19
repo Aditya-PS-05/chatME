@@ -7,13 +7,13 @@ import {
 } from "@repo/ui/components/ui/card";
 import { CustomUser } from "../../app/api/auth/[...nextauth]/options";
 import GroupChatCardMenu from "./GroupChatCardMenu";
-import { ChatGroupType } from "~/types";
+import { GroupChatType } from "~/types";
 
 export default function GroupChatCard({
   group,
   user,
 }: {
-  group: ChatGroupType;
+  group: GroupChatType;
   user: CustomUser;
 }) {
   return (

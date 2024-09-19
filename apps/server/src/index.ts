@@ -8,6 +8,8 @@ import { setupSocket } from "./socket";
 import { createAdapter } from "@socket.io/redis-streams-adapter";
 import redis from "./config/redis.config";
 import { instrument } from "@socket.io/admin-ui";
+import { connectKafkaProducer } from "./config/kafka.config";
+import { consumeMessages } from "./helper";
 
 const PORT = process.env.PORT || 8080;
 
@@ -34,6 +36,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api", router);
+
+connectKafkaProducer().catch((err) => {
+  console.log("Something went wrong while connecting kafka")
+})
+
+consumeMessages(process.env.KAFKA_TOPIC!).catch((err) => console.log("The consumer messages error is ", err)); 
 
 server.listen(PORT, () => {
   console.log(`Server listening at ${PORT}`);

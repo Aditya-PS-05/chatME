@@ -11,7 +11,7 @@ import { instrument } from "@socket.io/admin-ui";
 import { connectKafkaProducer } from "./config/kafka.config";
 import { consumeMessages } from "./helper";
 
-const PORT = process.env.PORT || 8080;
+const PORT = Number(process.env.PORT) || 8080;
 
 const app: Application = express();
 app.use(cors());
@@ -27,7 +27,7 @@ const io = new Server(server, {
 instrument(io, {
   auth: false,
   mode: "development"
-})
+});
 
 setupSocket(io);
 export { io };
@@ -35,14 +35,15 @@ export { io };
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// API Routes
 app.use("/api", router);
 
 connectKafkaProducer().catch((err) => {
-  console.log("Something went wrong while connecting kafka")
-})
+  console.log("Something went wrong while connecting kafka");
+});
 
-consumeMessages(process.env.KAFKA_TOPIC!).catch((err) => console.log("The consumer messages error is ", err)); 
+consumeMessages('chats').catch((err) => console.log("The consumer messages error is ", err)); 
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server listening at ${PORT}`);
 });

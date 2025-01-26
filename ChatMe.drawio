@@ -91,7 +91,7 @@
         <mxCell id="2kJRxK8k7VLQBlLropPZ-20" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="310" y="650" as="sourcePoint" />
-            <mxPoint x="290" y="460" as="targetPoint" />
+            <mxPoint x="290" y="490" as="targetPoint" />
             <Array as="points">
               <mxPoint x="290" y="650" />
             </Array>
@@ -126,6 +126,21 @@
         </mxCell>
         <mxCell id="2kJRxK8k7VLQBlLropPZ-32" value="&lt;div&gt;Client B&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="10" y="340" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kJRxK8k7VLQBlLropPZ-33" value="&lt;div&gt;Postgresql DB&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="654" y="680" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kJRxK8k7VLQBlLropPZ-34" value="Server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="250" y="275" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kJRxK8k7VLQBlLropPZ-37" value="Server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="250" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kJRxK8k7VLQBlLropPZ-38" value="Server" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="250" y="460" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kJRxK8k7VLQBlLropPZ-39" value="Redis" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="18" width="50" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

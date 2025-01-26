@@ -118,6 +118,15 @@
             <mxPoint x="670" y="650" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="2kJRxK8k7VLQBlLropPZ-30" value="Client A" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="16" y="238" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kJRxK8k7VLQBlLropPZ-31" value="&lt;div&gt;Client C&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="410" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2kJRxK8k7VLQBlLropPZ-32" value="&lt;div&gt;Client B&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="340" width="70" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
